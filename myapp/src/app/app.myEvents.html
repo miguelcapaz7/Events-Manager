@@ -1,0 +1,23 @@
+<br>
+<br>
+<h3>My Events</h3>
+
+<div *ngFor="let event of _eventsArray">
+<div *ngFor="let attendee of event.attendees">
+
+<table *ngIf="attendee.email == email" style="margin-top: 25px; margin-left: 50px"  width="50%">
+  <tr>
+    <th >{{event.name}}</th>
+    <td>{{event.date}}</td>
+    <td>{{event.time}}</td>
+  <td><input type="submit" value="No Longer Attending Event" class="btn btn-danger btn-sm"
+             (click)='unattendEvent(event._id)'/>
+  </td>
+  </tr>
+
+</table>
+
+</div>
+</div>
+
+

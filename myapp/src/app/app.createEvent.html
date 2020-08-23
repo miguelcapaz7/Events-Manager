@@ -1,0 +1,28 @@
+<br/><br/>
+<table width="30%">
+  <tr>
+    <td>Event Name:</td>
+    <td> <input type="text" [(ngModel)]='name'/></td>
+  </tr>
+  <tr>
+    <td> Event Date: </td>
+    <td><input type='text' [(ngModel)]='date'/></td>
+  </tr>
+  <tr>
+    <td> Event Time: </td>
+    <td><input type='text' [(ngModel)]='time'/></td>
+  </tr>
+  <tr>
+    <td> Event Description:  </td>
+    <td> <input type='text' [(ngModel)]='description'/></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><input type='button' value='Create' (click)="createEvent()" /></td>
+  </tr>
+</table>
+
+{{_errorMessage}}
+
+
+

@@ -1,0 +1,20 @@
+<br><br>
+
+<h3>Attendees</h3>
+<br>
+
+<div  *ngFor="let event of _eventsArray">
+  <table *ngIf="event._id == objID" width="50%">
+    <th>{{event.date}}</th>
+    <th>{{event.time}}</th>
+    <th>{{event.name}}</th>
+    <tr *ngFor="let attendee of event.attendees">
+      <td></td>
+      <td height="50px">{{attendee.firstName}} {{attendee.lastName}}</td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+
+

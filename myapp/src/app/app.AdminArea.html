@@ -1,0 +1,41 @@
+<br>
+<br>
+<table>
+  <tr>
+    <td> <a routerLink="/createEvent" routerLinkActive="active" >Create Event</a>
+      <router-outlet></router-outlet>
+    </td>
+  </tr>
+</table>
+
+<table  *ngFor="let event of _eventsArray" width="70%" style="border: 2px solid black;
+        margin-left: 30px; margin-top: 20px">
+  <tr style="text-align: center">
+    <th>Date</th>
+    <th>Time</th>
+    <th>Event Name</th>
+    <th></th>
+  </tr>
+
+  <tr style="text-align: center">
+    <td>{{event.date}}</td>
+    <td>{{event.time}}</td>
+    <td>{{event.name}}</td>
+    <td style="text-align: center" height="20px">
+      <input type="submit" value="View Attendees" class="btn btn-outline-danger btn-sm"
+             (click)="viewAttendees(event._id)" /> |
+      <input type="submit" value="Delete Event" class="btn btn-outline-danger btn-sm"
+             (click)="deleteEvent(event._id)"/>
+    </td>
+  </tr>
+
+  <tr>
+    <td></td>
+    <td><b>Description:</b> {{event.description}}</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<br>
+
+<br><br>

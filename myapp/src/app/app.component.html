@@ -1,0 +1,20 @@
+
+{{showContentIfLoggedIn()}}
+
+<nav>
+  <a routerLink="/main" routerLinkActive="active"> Main | </a>
+  <a *ngIf="token == ''" routerLink="/register" routerLinkActive="active" >Register | </a>
+  <a *ngIf="token == ''" routerLink="/login" routerLinkActive="active">Log in </a>
+
+  <!-- Shows the Events Manager link if user has Admin role -->
+  <a *ngIf="roles.includes('Admin')"
+     routerLink="/AdminArea" routerLinkActive="active" >Event Manager | </a>
+
+  <a *ngIf="token != ''" routerLink="/myEvents" routerLinkActive="active">My Events | </a>
+  <a *ngIf="token != ''" routerLink="/logout" routerLinkActive="active" (click)="clear()"
+     onclick="location.assign('http://localhost:4200/login')">Log out ({{username}}) </a>
+</nav>
+
+<!-- Where router should display a view -->
+<router-outlet></router-outlet>
+

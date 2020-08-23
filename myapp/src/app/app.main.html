@@ -1,0 +1,40 @@
+<br>
+<h3>Current Events</h3>
+<table  *ngFor="let event of _eventsArray" width="50%"
+        style="border: 2px solid black; margin-left: 30px; margin-top: 20px">
+  <tr>
+    <th style="text-align: center">Date</th>
+    <th style="text-align: center">Time</th>
+    <th style="text-align: center">Event Name</th>
+  </tr>
+  <tr>
+    <td style="text-align: center">{{event.date}}</td>
+    <td style="text-align: center">{{event.time}}</td>
+    <td style="text-align: center">{{event.name}}</td>
+  </tr>
+
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="text-align: center"><input
+             type="submit" value="Attend" class="btn btn-danger btn-sm"
+               (click)='attendEvent(event._id, event.attendees, event.name)'></td>
+
+</tr>
+  <tr>
+    <th></th>
+    <th >Description:</th>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>{{event.description}}</td>
+    <td></td>
+  </tr>
+</table>
+
+<br>
+<h3 *ngIf="_eventsArray.length == 0">No events available</h3>
+
+{{message}}
+
